@@ -1,20 +1,42 @@
+.label-text{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
 .price-calculator {
     background-color: #12163D;
     color: white;
     border-radius: 20px;
     padding: 30px;
     text-align: center;
-    width: 300px;
+    width: 450px;
     margin: 0 auto;
     font-family: 'Arial', sans-serif;
 }
-.price-calculator h2, h3 {
+.price-calculator h2 {
     color: white;
+    font-size: 20px;
+}
+.price-calculator h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 35px;
 }
 
-.price-calculator h3 {
-    font-size: 28px;
-    margin-bottom: 20px;
+.price-calculator p {
+    font-size: 20px;
+    font-weight: normal;
+}
+#price {
+    font-weight: normal;
+}
+
+.next-step {
+    margin-top: 35px;
+    border-style: none;
+}
+.price-calculator button {
+    color: white;
 }
 
 .slider-container {
@@ -24,6 +46,7 @@
     justify-content: center;
     align-items: center;
     margin: 20px 0;
+    margin-bottom: 35px;
 }
 
 input[type="range"] {
@@ -43,4 +66,3 @@ input[type="range"]::-webkit-slider-thumb {
     background: #F26D5A;
     cursor: pointer;
 }
-

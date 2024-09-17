@@ -1,14 +1,24 @@
 function updatePrice() {
     var employeeSlider = document.getElementById("employeeSlider");
-    var employeeValue = employeeSlider.value;
+    var sliderValue = parseInt(employeeSlider.value);
+    
+   
+    var employeeValues = [0, 1, 25, 50, 70];
+    var selectedEmployeeValue = employeeValues[sliderValue];
+
     var basePrice = 1900; // Pris per anställd
 
-    // Dynamisk beräkning av pris
-    var totalPrice = basePrice * employeeValue;
+   
+    var totalPrice = basePrice * selectedEmployeeValue;
 
     // Uppdatera priset
     document.getElementById("price").textContent = totalPrice.toLocaleString();
 
-    // Uppdatera värdet som visas i reglagets cirkel ("thumb")
-    employeeSlider.style.setProperty('--slider-thumb-text', `"${employeeValue}+"`);
+  
+    employeeSlider.setAttribute('data-thumb-value', selectedEmployeeValue);
 }
+
+
+window.onload = function() {
+    updatePrice();
+};
