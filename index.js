@@ -15,14 +15,16 @@ function updatePrice() {
     var perMonth = document.getElementById("perMonth");
 
     // Uppdatera priset
-   if (totalPrice > 100000) {
-       priceElement.textContent = "Offert";
-       perMonth.style.display = "none";
-       
-    } else {
-        document.getElementById("price").textContent = totalPrice.toLocaleString();
-    }
-
+    if (totalPrice > 100000) {
+        priceElement.textContent = "Offert";
+        perMonth.style.display = "none";
+        
+     } else {
+        priceElement.textContent = totalPrice.toLocaleString();
+        perMonth.style.display = "inline";
+        
+ 
+     }
   
     employeeSlider.setAttribute('data-thumb-value', selectedEmployeeValue);
     
