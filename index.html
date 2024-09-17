@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Price Calculator</title>
+    
+</head>
+<body>
+    <div class="price-calculator">
+        <label for="employeeSlider">Välj antal medarbetare:</label>
+        <div class="slider-container">
+            <input type="range" id="employeeSlider" min="1" max="70" value="1" oninput="updatePrice()">
+        </div>
+        <p>Komplett HR-tjänst till fast pris:</p>
+        <h2><span id="price">1900</span> kr/månad</h2>
+        <button class="next-step">Nästa steg</button>
+    </div>
+
+
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
