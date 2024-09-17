@@ -10,12 +10,22 @@ function updatePrice() {
 
    
     var totalPrice = basePrice * selectedEmployeeValue;
+    
+    var priceElement = document.getElementById("price");
+    var perMonth = document.getElementById("perMonth");
 
     // Uppdatera priset
-    document.getElementById("price").textContent = totalPrice.toLocaleString();
+   if (totalPrice > 100000) {
+       priceElement.textContent = "Offert";
+       perMonth.style.display = "none";
+       
+    } else {
+        document.getElementById("price").textContent = totalPrice.toLocaleString();
+    }
 
   
     employeeSlider.setAttribute('data-thumb-value', selectedEmployeeValue);
+    
 }
 
 
