@@ -1,36 +1,48 @@
 function updatePrice() {
-    var employeeSlider = document.getElementById("employeeSlider");
-    var sliderValue = parseInt(employeeSlider.value);
+    let employeeSlider = document.getElementById("employeeSlider");
+    let sliderValue = parseInt(employeeSlider.value);
     
-   
-    var employeeValues = [0, 1, 25, 50, 70];
-    var selectedEmployeeValue = employeeValues[sliderValue];
+    let employeeValues = [0, 1, 25, 50, 70];
+    let selectedEmployeeValue = employeeValues[sliderValue];
 
-    var basePrice = 1900; // Pris per anställd
+    let basePrice = 1900; 
 
-   
-    var totalPrice = basePrice * selectedEmployeeValue;
+    let totalPrice = basePrice * selectedEmployeeValue;
     
-    var priceElement = document.getElementById("price");
-    var perMonth = document.getElementById("perMonth");
+    let priceElement = document.getElementById("price");
+    let perMonth = document.getElementById("perMonth");
 
     // Uppdatera priset
     if (totalPrice > 100000) {
         priceElement.textContent = "Offert";
         perMonth.style.display = "none";
-        
-     } else {
+    } else {
         priceElement.textContent = totalPrice.toLocaleString();
         perMonth.style.display = "inline";
-        
+    }
+     // Uppdaterar 1+ label position
+     let antalMedarbetare = document.querySelector('.antalMedarbetare');
+     let sliderWidth = employeeSlider.offsetWidth;
+     let max = employeeSlider.max;
+     let min = employeeSlider.min;
  
+     
+     let position = ((sliderValue - min) / (max - min)) * (sliderWidth - 40); 
+     antalMedarbetare.style.left = `${position}px`; 
+ 
+        // Uppdaterar värdet av antal medarbetare baserat på slidern value
+        
+          if (selectedEmployeeValue === 1) {
+         antalMedarbetare.querySelector('span').textContent = `${selectedEmployeeValue}+`;
+     } else {
+         antalMedarbetare.querySelector('span').textContent = `${selectedEmployeeValue}`;
      }
-  
-    employeeSlider.setAttribute('data-thumb-value', selectedEmployeeValue);
-    
-}
-
-
-window.onload = function() {
-    updatePrice();
-};
+ }
+ 
+ window.onload = function() {
+     updatePrice();
+ };
+ 
+ window.onresize = function() {
+     updatePrice();
+ }

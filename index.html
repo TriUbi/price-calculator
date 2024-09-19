@@ -9,14 +9,23 @@
 </head>
 <body>
     <div class="price-calculator">
-        <label class="label-text" for="employeeSlider">Välj antal medarbetare:</label>
-        <div class="slider-container">
-            <input type="range" id="employeeSlider" min="1" max="4" value="1+" oninput="updatePrice()">
+        <h3 class="price-header">Räkna ut pris</h3> 
+            <label class="label-text" for="employeeSlider">Välj antal medarbetare:</label>
+            <div class="slider-container">
+                <div class="antalMedarbetare">
+                     <span id="sliderValue">1+</span> 
+                </div>
+                <input type="range" id="employeeSlider" min="1" max="4" value="1" oninput="updatePrice()">
+            </div>
+            
+            <h3>Komplett HR-tjänst till fast pris:<h3>
+            <p><span id="price">1900</span> <span id="perMonth">kr/månad</span></p>
+            
+           <a href="www.google.com" target="_blank">
+        <button class="next-step-btn">Nästa steg</button>
+    </a>
+    
         </div>
-        
-        <h3>Komplett HR-tjänst till fast pris:<h3>
-        <p><span id="price">1900</span> <span id="perMonth">kr/månad</span></p>
-    </div>
     <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
