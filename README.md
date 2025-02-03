@@ -1,6 +1,6 @@
 # Price Calculator
 
-A simple price calculator tool that helps calculate monthly costs based on the number of employees.
+A simple price calculator tool that helps calculate costs.
 
 ## Live Demo
 
